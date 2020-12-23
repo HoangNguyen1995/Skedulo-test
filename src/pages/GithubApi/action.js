@@ -13,6 +13,10 @@ export const GET_USERS = actionCreator("GITHUB_API_GET_USERS");
 export const getUsersAction = (q) => (dispatch, getState) => {
   const filter = getState().githubApi.filter;
 
+  if (filter.q.length <= 3) {
+    return null;
+  }
+
   dispatch({
     type: GET_USERS.PENDING,
   });
