@@ -85,7 +85,7 @@ export const serviceMaker = ({
   params = {},
   method = "GET",
   header = {},
-  body = {},
+  body,
   ...options
 }) => {
   return fetch(`${url}?${queryString(params)}`, {
